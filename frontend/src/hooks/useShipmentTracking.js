@@ -19,8 +19,8 @@ export function useShipmentTracking(shipmentId, { enabled = true } = {}) {
   useEffect(() => {
     if (!enabled || !shipmentId) return undefined
 
-    const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws'
-    const brokerURL = `${protocol}://${window.location.host}/api/ws/tracking`
+    const apiURL = import.meta.env.VITE_API_URL || window.location.origin
+    const brokerURL = apiURL.replace(/^http/, 'ws') + '/api/ws/tracking'
 
     const client = new Client({
       brokerURL,
