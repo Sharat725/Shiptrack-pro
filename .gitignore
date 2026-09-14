@@ -1,0 +1,26 @@
+# Java / Maven
+backend/target/
+*.class
+
+# Frontend dependencies and build output
+frontend/node_modules/
+frontend/dist/
+
+# Local runtime data
+uploads/
+backend/uploads/
+
+# Local configuration and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+backend/src/main/resources/application-local.properties
+
+# IDE and OS files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
